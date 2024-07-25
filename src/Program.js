@@ -11,8 +11,8 @@ const Program = () => {
                 <table className="exercise-table">
                     <thead>
                     <tr>
-                        <th>Exercise</th>
-                        <th>Count</th>
+                        <th>Egzersiz</th>
+                        <th>Tekrar</th>
                     </tr>
                     </thead>
                     <tbody>
