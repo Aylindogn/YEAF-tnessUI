@@ -20,39 +20,33 @@ const Home = (props) => {
     const onClickChooseCourt=()=>{
     //Drçilrn saatte o courtta kontenjan varsa randevu atar ve success mesajı döner.Yoksa hata döner.
     }
-    return(
-        <div className='homeWrapper'>
-            <div>
-        <button className='myButton createProgramButton' onClick={createExerciseProgram}>Egzersiz programı oluştur !</button>
-            </div>
-            <div>
-                <div  className='custom-dropdown'>
-                <select onChange={e=>setEducationMajor(e.target.value)}>
-                    {MAJORS.map(major => <option>{major}</option>)}
-                </select>
-                </div>
-                <div  className='custom-dropdown'>
-                <select onChange={e=>setEducationTime(e.target.value)}>
-                    {TIMES.map(time => <option>{time}</option>)}
-                </select>
-                </div>
-                <button className='myButton getClassButton'  onClick={onClickGetClass}>Eğitim al !</button>
-            </div>
-            <div>
-                <div  className='custom-dropdown'>
-                <select onChange={e=>setCourtMajor(e.target.value)}>
-                    {MAJORS.map(major => <option>{major}</option>)}
-                </select>
-                </div>
-                    <div  className='custom-dropdown'>
-                    <select onChange={e=>setCourtTime(e.target.value)}>
-                        {TIMES.map(time => <option>{time}</option>)}
-                    </select>
-                    </div>
-                <button className='myButton chooseCourtButton'  onClick={onClickChooseCourt}>Spor salonu seç !</button>
-            </div>
+    return (
+        <div>
+            <div className='blur-background-wrapper'></div>
+    <div className="exercise-container">
+        <button className="create-program-btn"  onClick={createExerciseProgram}>Egzersiz Programı Oluştur</button>
+        <div className="selection-container">
+            <select className="select-input" onChange={e => setEducationMajor(e.target.value)}>
+                {MAJORS.map(major => <option value={major}>{major}</option>)}
+            </select>
+            <select className="select-input" onChange={e => setEducationTime(e.target.value)}>
+                {TIMES.map(time => <option value={time}>{time}</option>)}
+            </select>
+            <button className="get-education-btn">Eğitim Al</button>
         </div>
-    )
+        <div className="selection-container">
+            <select className="select-input" onChange={e => setCourtMajor(e.target.value)}>
+                {MAJORS.map(major => <option value={major}>{major}</option>)}
+            </select>
+            <select className="select-input" onChange={e => setCourtTime(e.target.value)}>
+                {TIMES.map(time => <option value={time}>{time}</option>)}
+            </select>
+            <button className="get-education-btn">Spor salonu seç</button>
+        </div>
+    </div>
+        </div>
+
+)
 }
 
 export default Home
